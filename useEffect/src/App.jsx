@@ -1,32 +1,31 @@
-import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState} from "react";
 
-function App() {
- const[num1,setNum1]=useState(10000000);
- const[num2,setNum2]=useState(1000);
+function App(){
+  const[num,setNum]=useState(1);
+  const[name,setName]=useState(500);
 
- useEffect(()=>{
-    setNum1(200);
-    console.log("From useEffect");
+  useEffect(()=>{
 
-    return()=>{
-      setNum1(0);
-      console.log("Memory Cleaned Up");
-    }    
- },[num1,num2]);1
+    console.log("useeffect is called");
 
- console.log(num1);
- console.log(num2);
+    return {
+
+        }
+  },[num,name]);
+
+
 
 
   return (
-    <>
-    <div>{num1}</div>
-    <button onClick={() => setNum1(num1+1)} >Add Num1</button>
+    <div>
+      <h1>{num}</h1>
+      <button onClick={()=>setNum(curr=>curr+1)}>Add </button>
+      <br />
+      <h1>{name}</h1>
+      <button onClick={()=>setName(curr=>curr+500)}>Change </button>
+    </div>
 
-    <div>{num2}</div>
-    <button onClick={() => setNum2(num2+1)} >Add Num2</button>
-    </>
-  );
+  ) 
 }
 
 export default App;

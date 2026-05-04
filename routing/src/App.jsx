@@ -4,18 +4,21 @@ import About from "./Pages/About";
 import Users from "./Pages/Users";
 import Contact from "./Pages/Contact";
 import Navbar from "./Component/Navbar";
+import Error from "./Pages/Error";
 
 function App() {
   return (
     <BrowserRouter>
+    <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/users" element={<Users/>}></Route>
         <Route path="/about" element={<About/>}></Route>
         <Route path="/contact" element={<Contact/>}></Route>
+        <Route path="*" element={<Error/>}></Route>
       </Routes>
+      
     </BrowserRouter>
   );
 }
-
 export default App;
